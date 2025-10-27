@@ -37,13 +37,12 @@ def extract_text(file):
         doc = Document(byts)
         return "\n".join(p.text for p in doc.paragraphs)
     else:
-        # txt or anything else treated as text
         return data.decode("utf-8", errors="ignore")
 
 # --- Sidebar: upload policy -----------------------------------
 with st.sidebar:
     st.subheader("📄 Upload policy file")
-    file = st.file_uploader("Upload .txt / .pdf / .docx", type=["txt","pdf","docx"])
+    file = st.file_uploader("Upload .txt / .pdf / .docx", type=["txt", "pdf", "docx"])
     if file:
         policy_text = extract_text(file)
         st.success(f"Loaded: {file.name} ({len(policy_text)} chars)")
@@ -65,8 +64,8 @@ def ask_llm(question, context):
     resp = client.chat.completions.create(
         model=DEPLOYMENT,
         messages=[
-            {"role":"system","content":system},
-            {"role":"user","content":user}
+            {"role": "system", "content": system},
+            {"role": "user", "content": user}
         ],
         temperature=0.2
     )
@@ -91,3 +90,16 @@ for i, (qq, aa) in enumerate(reversed(st.session_state.history), 1):
     st.divider()
 
 st.caption("Tip: replace the policy file anytime; answers will adapt instantly.")
+
+# --- Footer ---------------------------------------------------
+st.markdown(
+    """
+    <hr style="margin-top: 40px; margin-bottom: 10px;">
+    <div style="text-align: center;">
+        💡 Built with <b>Azure OpenAI</b> + <b>Streamlit</b> |
+        Made by <a href="https://www.linkedin.com/in/lavanya-srivastava" target="_blank">
+        <b>Lavanya Srivastava</b></a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
