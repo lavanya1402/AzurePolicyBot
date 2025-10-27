@@ -1,0 +1,69 @@
+# ========================
+# Python & Streamlit setup
+# ========================
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment folders
+.venv/
+venv/
+env/
+ENV/
+*.env
+.env*
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.swp
+
+# Streamlit secrets and cache
+.streamlit/secrets.toml
+.streamlit/config.toml
+.streamlit/cache/
+.streamlit/
+
+# OS system files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.old
+
+# Build / dist
+build/
+dist/
+*.egg-info/
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+
+# ========================
+# Sensitive data
+# ========================
+# API keys, credentials, or config files
+*.key
+*.pem
+*.p12
+credentials.json
+service_account.json
+
+# Uploaded or processed files
+uploads/
+data/
+tmp/
+policy.txt*
+policy.docx*
+policy.pdf*
+
+# ========================
+# Streamlit Cloud extras
+# ========================
+# Do not push your local .env (use Streamlit secrets instead)
+.env
