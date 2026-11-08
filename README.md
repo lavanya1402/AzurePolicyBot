@@ -176,3 +176,13 @@ AI Developer | Trainer | Azure OpenAI | RAG | Streamlit | GenAI Systems
 📧 [lavanaya.srivastava@gmail.com](mailto:lavanaya.srivastava@gmail.com)
 🖥️ [Live Demo](https://azurepolicybot.streamlit.app/)
 
+
+## Run locally
+
+```bash
+python -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+cp .env.example .env               # add your keys
+streamlit run app.py
+```

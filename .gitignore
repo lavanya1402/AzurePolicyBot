@@ -67,3 +67,5 @@ policy.pdf*
 # ========================
 # Do not push your local .env (use Streamlit secrets instead)
 .env
+.ruff_cache/
+.pytest_cache/
